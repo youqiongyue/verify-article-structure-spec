@@ -212,6 +212,14 @@ const badcases = [
     requireLocalTpl: true,
   },
 
+  // ===== text-align =====
+  {
+    id: 'text-align-start-in-center',
+    relatedRule: 'text-align',
+    expectInvalidKeys: ['text-align'],
+    desc: '#1.6 text-align - 外层 center 内嵌 text-align:start，不同终端对齐不一致（基于线上真实 HTML 结构构造）',
+  },
+
   // ===== pre =====
   {
     id: 'JAk9Sa9c7cCu9sX5pNIcZg',
@@ -308,6 +316,10 @@ const goodcases = [
     id: 'pre-scrollable-code',
     desc: '#1.8 pre - issue #45 原始长短代码块：overflow-x:auto 可完整滚动阅读，不应误报',
     requireLocalTpl: true,
+  },
+  {
+    id: 'text-align-start-no-conflict',
+    desc: '反向用例 #11 - text-align:start 无外层冲突（线上真实 HTML）：start→left 与默认 left 一致，不应误报（#1.6）',
   },
 ];
 
